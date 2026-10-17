@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluor — Nguyên tố số 9</title>
+<style>
+:root{--bg:#07111f;--panel:#101f33;--panel2:#142841;--text:#edf6ff;--muted:#a9bfd5;--cyan:#63e6e2;--blue:#73a9ff;--gold:#ffd166;--pink:#ff7da8;--line:#29425e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,#17385a 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{padding:48px 20px 34px;max-width:1180px;margin:auto}.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-size:.78rem}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}h1{font-size:clamp(2.5rem,6vw,5.2rem);line-height:.98;letter-spacing:-.05em;margin:12px 0 18px}.hero p{color:var(--muted);max-width:650px;font-size:1.1rem}.symbol-card{background:linear-gradient(145deg,#193a59,#102137);border:1px solid #315574;border-radius:28px;padding:28px;text-align:center;box-shadow:0 25px 70px #0005}.symbol{font-size:6rem;line-height:1;font-weight:900;color:var(--cyan);text-shadow:0 0 35px #63e6e266}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.fact{background:#07152580;border:1px solid var(--line);border-radius:14px;padding:12px}.fact strong{display:block;font-size:1.15rem}.fact span{color:var(--muted);font-size:.8rem}
+nav{position:sticky;top:0;z-index:10;background:#07111fe8;backdrop-filter:blur(14px);border-block:1px solid #20364e;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:10px}nav a{color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:99px;font-size:.9rem}nav a:hover{background:var(--panel2);color:white}
+main{max-width:1180px;margin:auto;padding:22px 20px 70px}section{margin:28px 0 48px;scroll-margin-top:80px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}h2{font-size:clamp(1.6rem,3vw,2.35rem);line-height:1.15;margin:0 0 8px;letter-spacing:-.03em}.sub{color:var(--muted);margin:0}.tag{font-size:.78rem;border:1px solid #35617d;color:var(--cyan);padding:5px 10px;border-radius:99px;white-space:nowrap}
+.panel{background:linear-gradient(145deg,#102139,#0c192a);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 12px 35px #0002}.video-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.screen{min-height:330px;position:relative;overflow:hidden;border-radius:18px;background:radial-gradient(circle at 50% 48%,#1c496b,#081626 68%);border:1px solid #315574;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}.screen .scene-number{position:absolute;top:14px;left:16px;color:#a8d5ef;font-size:.8rem;letter-spacing:.1em}.scene-visual{font-size:clamp(3rem,7vw,5rem);line-height:1.2;filter:drop-shadow(0 0 20px #63e6e255)}.screen h3{font-size:clamp(1.4rem,3vw,2.2rem);margin:12px 0 6px}.screen p{color:#c7d9ea;max-width:560px;margin:0}.progress{height:5px;background:#20364e;border-radius:8px;overflow:hidden;margin-top:17px}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue));transition:width .3s}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.btn{border:0;border-radius:12px;padding:11px 16px;background:var(--cyan);color:#06202a;font-weight:800;cursor:pointer}.btn.secondary{background:#203b57;color:var(--text);border:1px solid #365673}.btn:hover{filter:brightness(1.08)}.script-box h3{margin-top:0}.script-box p{color:var(--muted)}.script-text{max-height:260px;overflow:auto;padding-right:6px}.tiny{font-size:.84rem;color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.info-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px}.info-card .icon{font-size:1.7rem}.info-card h3{margin:8px 0}.info-card p,.info-card li{color:var(--muted)}ul{padding-left:20px}.caution{border-left:4px solid var(--gold);background:#2a2416;padding:15px 17px;border-radius:0 12px 12px 0;color:#ffe8ae;margin-top:16px}
+.atom-layout{display:grid;grid-template-columns:1fr .9fr;gap:18px;align-items:center}.atom-stage{min-height:390px;display:grid;place-items:center;overflow:hidden;position:relative;background:radial-gradient(circle,#15395a 0, #0a1727 66%);border-radius:20px;border:1px solid var(--line)}.atom{width:280px;height:280px;position:relative;transform-style:preserve-3d;animation:float 5s ease-in-out infinite}.orbit{position:absolute;left:50%;top:50%;width:250px;height:100px;border:2px solid #69c8ff99;border-radius:50%;transform-style:preserve-3d}.orbit.one{transform:translate(-50%,-50%) rotate(0deg)}.orbit.two{transform:translate(-50%,-50%) rotate(60deg)}.orbit.three{transform:translate(-50%,-50%) rotate(120deg)}.nucleus{position:absolute;left:50%;top:50%;width:76px;height:76px;transform:translate(-50%,-50%);display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:3px;filter:drop-shadow(0 0 14px #ff7da899)}.nucleon{width:19px;height:19px;border-radius:50%;background:#ff7da8;border:1px solid #ffd3df}.nucleon:nth-child(even){background:#ffd166;border-color:#fff0b8}.electron{position:absolute;left:50%;top:50%;width:14px;height:14px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan);transform-origin:0 0;animation:orbit 4s linear infinite}.electron.e1{transform:rotate(0deg) translateX(124px);animation-duration:4s}.electron.e2{transform:rotate(90deg) translateX(124px);animation-duration:4.7s}.electron.e3{transform:rotate(180deg) translateX(124px);animation-duration:5.2s}.electron.e4{transform:rotate(270deg) translateX(124px);animation-duration:4.3s}.electron.e5{transform:rotate(45deg) translateX(124px);animation-duration:5.6s}.electron.e6{transform:rotate(135deg) translateX(124px);animation-duration:4.8s}.electron.e7{transform:rotate(225deg) translateX(124px);animation-duration:5.1s}.electron.e8{transform:rotate(315deg) translateX(124px);animation-duration:4.5s}.electron.e9{transform:rotate(0deg) translateX(47px);animation-duration:2.7s}.atom-legend{display:grid;gap:12px}.legend-row{display:flex;gap:12px;align-items:center;padding:13px;background:#0a1828;border-radius:13px}.dot{width:13px;height:13px;border-radius:50%;flex:none}.legend-row strong{display:block}.legend-row span{color:var(--muted);font-size:.9rem}.note{color:var(--muted);font-size:.85rem;margin-top:12px}@keyframes orbit{from{rotate:0deg}to{rotate:360deg}}@keyframes float{0%,100%{transform:translateY(0) rotateX(-8deg)}50%{transform:translateY(-8px) rotateX(8deg)}}
+.experiment{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.steps{counter-reset:step;display:grid;gap:12px}.step{counter-increment:step;display:flex;gap:13px;background:#0a1828;border:1px solid var(--line);border-radius:14px;padding:14px}.step:before{content:counter(step);display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:10px;background:#183e5a;color:var(--cyan);font-weight:900}.step p{margin:0;color:var(--muted)}.step strong{color:var(--text);display:block;margin-bottom:3px}
+.quiz{display:grid;grid-template-columns:1fr .65fr;gap:18px}.question{background:#0a1828;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}.question h3{margin:0 0 12px;font-size:1.05rem}.answers{display:grid;gap:8px}.answer{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:11px 13px;background:#11243a;border:1px solid #2b4662;border-radius:11px;color:var(--text);cursor:pointer}.answer:hover{border-color:var(--cyan)}.answer.selected{border-color:var(--cyan);background:#103a46}.answer.correct{border-color:#55d6a1;background:#10372f}.answer.wrong{border-color:#ff7da8;background:#3a1b2a}.feedback{font-size:.9rem;margin-top:9px;color:var(--muted);min-height:20px}.score-card{align-self:start;position:sticky;top:80px}.score{font-size:3rem;font-weight:900;color:var(--cyan)}footer{text-align:center;color:#8199b2;border-top:1px solid var(--line);padding:25px 20px;font-size:.85rem}
+@media(max-width:780px){.hero,.video-layout,.grid-2,.atom-layout,.experiment,.quiz{grid-template-columns:1fr}.symbol-card{max-width:480px;margin:auto;width:100%}.facts{grid-template-columns:repeat(3,1fr)}.screen{min-height:300px}.score-card{position:static}.section-head{align-items:start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Hồ sơ nguyên tố · Hóa học tương tác</div>
+      <h1>Fluor<span style="color:var(--cyan)">.</span></h1>
+      <p>Một nguyên tố cực kỳ hoạt động hóa học, có mặt trong kem đánh răng và nhiều vật liệu công nghiệp — nhưng bản thân khí fluor lại rất nguy hiểm.</p>
+      <a class="btn" href="#video" style="display:inline-block;text-decoration:none;margin-top:8px">▶ Xem video 75 giây</a>
+    </div>
+    <div class="symbol-card">
+      <div class="symbol">F</div>
+      <div style="font-weight:800;font-size:1.2rem">Fluor · Fluorine</div>
+      <div style="color:var(--muted)">Nguyên tố hóa học số 9</div>
+      <div class="facts">
+        <div class="fact"><strong>9</strong><span>Số hiệu nguyên tử</span></div>
+        <div class="fact"><strong>19,00</strong><span>Nguyên tử khối gần đúng</span></div>
+        <div class="fact"><strong>17</strong><span>Nhóm halogen</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav aria-label="Điều hướng">
+  <a href="#video">Video</a><a href="#ung-dung">Ứng dụng</a><a href="#mo-hinh">Nguyên tử 3D</a><a href="#thi-nghiem">Thí nghiệm</a><a href="#quiz">Câu hỏi</a>
+</nav>
+<main>
+<section id="video">
+  <div class="section-head"><div><h2>Video khám phá trong 75 giây</h2><p class="sub">Hoạt cảnh có phụ đề và đọc lời dẫn bằng giọng nói của trình duyệt.</p></div><span class="tag">01:15 · 5 cảnh</span></div>
+  <div class="video-layout">
+    <div class="panel">
+      <div class="screen" aria-live="polite">
+        <div class="scene-number" id="sceneNumber">CẢNH 1 / 5 · 00:00</div>
+        <div class="scene-visual" id="sceneVisual">⚛️</div>
+        <h3 id="sceneTitle">Gặp gỡ Fluor</h3>
+        <p id="sceneCaption">Fluor có số hiệu nguyên tử 9, thuộc nhóm halogen.</p>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div class="controls">
+        <button class="btn" id="playVideo">▶ Phát video</button>
+        <button class="btn secondary" id="pauseVideo">Ⅱ Tạm dừng</button>
+        <button class="btn secondary" id="restartVideo">↺ Xem lại</button>
+        <button class="btn secondary" id="voiceToggle">🔊 Tắt lời đọc</button>
+      </div>
+      <p class="tiny">Lưu ý: đây là video hoạt cảnh dựng trực tiếp trong trang, không phải tệp video quay sẵn. Nút lời đọc dùng tính năng đọc văn bản của trình duyệt.</p>
+    </div>
+    <aside class="panel script-box">
+      <h3>Lời dẫn video</h3>
+      <div class="script-text" id="scriptText">
+        <p><strong>00–15 giây · Chân dung:</strong> Đây là Fluor, ký hiệu F, nguyên tố số 9 trong bảng tuần hoàn. Ở điều kiện thường, fluor nguyên chất tồn tại dưới dạng khí F₂ màu vàng nhạt.</p>
+        <p><strong>15–30 giây · Cấu tạo:</strong> Một nguyên tử fluor trung hòa có 9 proton và 9 electron. Đồng vị phổ biến fluor-19 có 10 neutron. Lớp electron ngoài cùng có 7 electron, khiến fluor rất dễ tham gia phản ứng.</p>
+        <p><strong>30–45 giây · Trong đời sống:</strong> Các hợp chất fluoride với lượng thích hợp giúp men răng chống lại sự tấn công của axit. Fluor không đồng nghĩa với fluoride: khí fluor nguyên tố cực độc và ăn mòn.</p>
+        <p><strong>45–60 giây · Công nghiệp:</strong> Hợp chất chứa fluor được dùng để sản xuất vật liệu bền hóa chất như PTFE, một số chất làm lạnh chuyên dụng và trong quy trình chế biến vật liệu bán dẫn, với kiểm soát nghiêm ngặt.</p>
+        <p><strong>60–75 giây · An toàn:</strong> Không tự tạo hay tiếp xúc với khí fluor. Ta có thể tìm hiểu vai trò của fluoride bằng mô hình vỏ trứng và dung dịch axit loãng an toàn, có người lớn giám sát. Hóa học thú vị nhất khi đi cùng kiến thức và an toàn!</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="ung-dung">
+  <div class="section-head"><div><h2>Tác dụng y tế & công nghiệp</h2><p class="sub">Phần lớn ứng dụng thực tế là của hợp chất fluor, không phải khí fluor nguyên chất.</p></div><span class="tag">02 · Ứng dụng</span></div>
+  <div class="grid-2">
+    <article class="info-card"><div class="icon">🦷</div><h3>Y tế & chăm sóc răng miệng</h3><ul><li><strong>Fluoride trong kem đánh răng:</strong> hỗ trợ tái khoáng men răng và giúp ngăn ngừa sâu răng khi dùng đúng hướng dẫn.</li><li><strong>Véc-ni fluoride:</strong> nha sĩ có thể dùng để hỗ trợ phòng ngừa sâu răng cho một số nhóm người.</li><li><strong>Dược phẩm:</strong> một số phân tử thuốc chứa nguyên tử fluor để điều chỉnh tính chất của thuốc; điều đó không có nghĩa là fluor nguyên tố được đưa trực tiếp vào cơ thể.</li></ul></article>
+    <article class="info-card"><div class="icon">🏭</div><h3>Công nghiệp & công nghệ</h3><ul><li><strong>PTFE (Teflon):</strong> polymer có hệ số ma sát thấp, bền hóa chất, dùng trong lớp phủ và gioăng kỹ thuật.</li><li><strong>Bán dẫn:</strong> một số khí/hợp chất chứa fluor được dùng trong khắc và làm sạch thiết bị, trong hệ thống công nghiệp chuyên dụng.</li><li><strong>Vật liệu & hóa chất:</strong> hợp chất fluor có vai trò trong một số chất làm lạnh, pin và quy trình tổng hợp hóa học.</li></ul></article>
+  </div>
+  <div class="caution"><strong>⚠ Phân biệt quan trọng:</strong> Fluor nguyên tố (F₂) là khí cực độc, ăn mòn mạnh và phản ứng dữ dội. Không được thử điều chế hay tiếp xúc. Fluoride (F⁻) là ion có trong một số hợp chất; lợi ích hay nguy cơ phụ thuộc vào hợp chất, liều lượng và cách sử dụng.</div>
+</section>
+
+<section id="mo-hinh">
+  <div class="section-head"><div><h2>Mô hình nguyên tử 3D</h2><p class="sub">Xoay và chuyển động minh họa cấu trúc nguyên tử fluor.</p></div><span class="tag">03 · Cấu tạo</span></div>
+  <div class="panel atom-layout">
+    <div class="atom-stage" aria-label="Mô hình nguyên tử fluor dạng quỹ đạo chuyển động">
+      <div class="atom">
+        <div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div>
+        <div class="nucleus" aria-label="Hạt nhân gồm 9 proton và 10 neutron">
+          <i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i><i class="nucleon"></i>
+        </div>
+        <i class="electron e1"></i><i class="electron e2"></i><i class="electron e3"></i><i class="electron e4"></i><i class="electron e5"></i><i class="electron e6"></i><i class="electron e7"></i><i class="electron e8"></i><i class="electron e9"></i>
+      </div>
+    </div>
+    <div class="atom-legend">
+      <div class="legend-row"><i class="dot" style="background:#ff7da8"></i><div><strong>9 proton</strong><span>Điện tích dương trong hạt nhân.</span></div></div>
+      <div class="legend-row"><i class="dot" style="background:#ffd166"></i><div><strong>10 neutron</strong><span>Hạt không mang điện; với fluor-19.</span></div></div>
+      <div class="legend-row"><i class="dot" style="background:var(--cyan)"></i><div><strong>9 electron</strong><span>Phân bố theo lớp: 2 electron lớp thứ nhất, 7 electron lớp thứ hai.</span></div></div>
+      <div class="legend-row"><i class="dot" style="background:#69c8ff"></i><div><strong>Cấu hình electron: 1s² 2s² 2p⁵</strong><span>7 electron hóa trị góp phần làm fluor có tính oxi hóa rất mạnh.</span></div></div>
+      <p class="note">Mô hình quỹ đạo là hình minh họa đơn giản, không phải hình ảnh chính xác của nguyên tử. Electron được mô tả tốt hơn bằng orbital/xác suất lượng tử.</p>
+    </div>
+  </div>
+</section>
+
+<section id="thi-nghiem">
+  <div class="section-head"><div><h2>Thí nghiệm thực tế an toàn</h2><p class="sub">Quan sát vai trò của fluoride qua mô hình bảo vệ bề mặt — không tạo khí fluor.</p></div><span class="tag">04 · Thực hành</span></div>
+  <div class="experiment">
+    <div class="panel">
+      <h3>Vỏ trứng và axit loãng</h3>
+      <p class="sub">Vỏ trứng chứa calcium carbonate, có thể dùng làm mô hình đơn giản cho vật liệu khoáng. Đây không phải phép thử lâm sàng về sâu răng.</p>
+      <div style="margin:20px 0;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="text-align:center"><div style="font-size:3.2rem">🥚</div><strong>Mẫu A</strong><div class="tiny">Không phủ</div></div>
+        <div style="font-size:1.5rem;color:var(--muted)">VS</div>
+        <div style="text-align:center"><div style="font-size:3.2rem">🛡️🥚</div><strong>Mẫu B</strong><div class="tiny">Phủ kem đánh răng fluoride</div></div>
+      </div>
+      <div class="caution"><strong>An toàn:</strong> dùng giấm ăn pha loãng, kính bảo hộ và khay; có người lớn giám sát. Không nếm, không dùng hóa chất mạnh. Nếu không có người giám sát, chỉ quan sát hình minh họa và không tiến hành.</div>
+    </div>
+    <div class="panel">
+      <h3>Cách tiến hành</h3>
+      <div class="steps">
+        <div class="step"><div><strong>Chuẩn bị hai mẫu</strong><p>Dùng hai mảnh vỏ trứng sạch, khô và có kích thước gần tương đương.</p></div></div>
+        <div class="step"><div><strong>Tạo lớp phủ cho mẫu B</strong><p>Phủ một lớp kem đánh răng có fluoride lên mẫu B, để theo hướng dẫn sản phẩm rồi rửa nhẹ; mẫu A không phủ.</p></div></div>
+        <div class="step"><div><strong>Quan sát có kiểm soát</strong><p>Đặt hai mẫu vào hai cốc riêng, thêm lượng giấm ăn pha loãng tương đương và quan sát trong thời gian ngắn dưới sự giám sát của người lớn.</p></div></div>
+        <div class="step"><div><strong>Ghi nhận và thảo luận</strong><p>Ghi bọt khí, thay đổi bề mặt và thời gian. Kết quả có thể không rõ ràng; không kết luận định lượng hiệu quả fluoride từ thí nghiệm này.</p></div></div>
+      </div>
+      <p class="note"><strong>Giải thích:</strong> axit phản ứng với calcium carbonate tạo khí CO₂. Fluoride có vai trò bảo vệ men răng trong điều kiện miệng thực tế, nhưng vỏ trứng không giống men răng hoàn toàn và thí nghiệm này chỉ mang tính minh họa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="section-head"><div><h2>Thử thách kiến thức</h2><p class="sub">Chọn đáp án — hệ thống phản hồi ngay và giải thích vì sao.</p></div><span class="tag">05 · Tương tác</span></div>
+  <div class="quiz">
+    <div id="questions"></div>
+    <aside class="panel score-card">
+      <div class="eyebrow">Kết quả của bạn</div><div class="score"><span id="score">0</span><span style="font-size:1.3rem;color:var(--muted)"> / 5</span></div>
+      <p id="scoreMessage" class="sub">Trả lời các câu hỏi để xem kết quả.</p>
+      <button class="btn" id="resetQuiz">↺ Làm lại bài</button>
+      <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+      <h3 style="margin-bottom:6px">Câu hỏi tư duy</h3>
+      <p class="tiny">Vì sao một nguyên tố có thể nguy hiểm ở dạng đơn chất nhưng hợp chất của nó lại hữu ích?</p>
+      <button class="btn secondary" id="hintBtn">Gợi ý</button><p id="hint" class="tiny"></p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer>Trang học tập tương tác · Nội dung dành cho mục đích giáo dục, không thay thế hướng dẫn y tế hoặc quy trình an toàn phòng thí nghiệm.</footer>
+<script>
+const scenes=[
+ {time:0,visual:"⚛️",title:"Gặp gỡ Fluor",caption:"Fluor (F) có số hiệu nguyên tử 9 và thuộc nhóm halogen.",voice:"Đây là Fluor, ký hiệu F, nguyên tố số 9 trong bảng tuần hoàn. Ở điều kiện thường, fluor nguyên chất tồn tại dưới dạng khí F hai màu vàng nhạt."},
+ {time:15,visual:"➕ 9p　🟡 10n　🔹 9e",title:"Bên trong nguyên tử",caption:"Fluor-19 có 9 proton, 10 neutron và nguyên tử trung hòa có 9 electron.",voice:"Một nguyên tử fluor trung hòa có 9 proton và 9 electron. Đồng vị phổ biến fluor mười chín có 10 neutron. Lớp electron ngoài cùng có 7 electron, khiến fluor rất dễ tham gia phản ứng."},
+ {time:30,visual:"🦷 ✨",title:"Trong đời sống",caption:"Fluoride với lượng phù hợp giúp men răng chống lại axit.",voice:"Các hợp chất fluoride với lượng thích hợp giúp men răng chống lại sự tấn công của axit. Fluor không đồng nghĩa với fluoride: khí fluor nguyên tố cực độc và ăn mòn."},
+ {time:45,visual:"🏭 ⚙️",title:"Vật liệu công nghệ",caption:"Hợp chất fluor góp mặt trong PTFE và một số quy trình công nghệ cao.",voice:"Hợp chất chứa fluor được dùng để sản xuất vật liệu bền hóa chất như PTFE, một số chất làm lạnh chuyên dụng và trong quy trình chế biến vật liệu bán dẫn, với kiểm soát nghiêm ngặt."},
+ {time:60,visual:"🛡️ ⚠️",title:"Hóa học đi cùng an toàn",caption:"Không tự tạo hay tiếp xúc với khí fluor. Hãy học qua mô hình an toàn.",voice:"Không tự tạo hay tiếp xúc với khí fluor. Ta có thể tìm hiểu vai trò của fluoride bằng mô hình vỏ trứng và dung dịch axit loãng an toàn, có người lớn giám sát. Hóa học thú vị nhất khi đi cùng kiến thức và an toàn!"}
+];
+let currentScene=0,playing=false,voiceOn=true,startedAt=0,elapsedBeforePause=0,timer=null;
+const $=id=>document.getElementById(id);
+function fmt(s){return "00:"+String(Math.min(59,Math.floor(s))).padStart(2,"0")}
+function showScene(i){currentScene=i;const s=scenes[i];$("sceneNumber").textContent=`CẢNH ${i+1} / 5 · ${fmt(s.time)}`;$("sceneVisual").textContent=s.visual;$("sceneTitle").textContent=s.title;$("sceneCaption").textContent=s.caption;$("progressBar").style.width=(s.time/75*100)+"%";}
+function updateVideo(){if(!playing)return;const elapsed=elapsedBeforePause+(performance.now()-startedAt)/1000;if(elapsed>=75){elapsedBeforePause=75;playing=false;clearInterval(timer);$("progressBar").style.width="100%";$("sceneNumber").textContent="HOÀN TẤT · 01:15";if("speechSynthesis"in window)window.speechSynthesis.cancel();return;}let idx=0;for(let i=0;i<scenes.length;i++)if(elapsed>=scenes[i].time)idx=i; if(idx!==currentScene)showScene(idx);$("progressBar").style.width=(elapsed/75*100)+"%";$("sceneNumber").textContent=`CẢNH ${idx+1} / 5 · ${fmt(elapsed)}`;}
+function play(){if(playing)return;if(elapsedBeforePause>=75)elapsedBeforePause=0;playing=true;startedAt=performance.now();if(voiceOn&&"speechSynthesis"in window){window.speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(scenes[currentScene].voice);utter.lang="vi-VN";utter.rate=.94;window.speechSynthesis.speak(utter);}timer=setInterval(updateVideo,150);}
+function pause(){if(!playing)return;elapsedBeforePause+= (performance.now()-startedAt)/1000;playing=false;clearInterval(timer);if("speechSynthesis"in window)window.speechSynthesis.pause();}
+$("playVideo").onclick=play;$("pauseVideo").onclick=pause;
+$("restartVideo").onclick=()=>{playing=false;clearInterval(timer);elapsedBeforePause=0;showScene(0);if("speechSynthesis"in window)window.speechSynthesis.cancel();play();};
+$("voiceToggle").onclick=()=>{voiceOn=!voiceOn;$("voiceToggle").textContent=voiceOn?"🔊 Tắt lời đọc":"🔇 Bật lời đọc";if(!voiceOn&&"speechSynthesis"in window)window.speechSynthesis.cancel();};
+const quiz=[
+ {q:"Fluor có số hiệu nguyên tử là bao nhiêu?",a:["7","8","9","10"],correct:2,why:"Số hiệu nguyên tử bằng số proton trong hạt nhân. Fluor có 9 proton."},
+ {q:"Nguyên tử fluor trung hòa có bao nhiêu electron?",a:["7","9","10","19"],correct:1,why:"Nguyên tử trung hòa có số electron bằng số proton, nên fluor có 9 electron."},
+ {q:"Đồng vị fluor-19 có bao nhiêu neutron?",a:["9","10","19","28"],correct:1,why:"Số neutron = số khối − số proton = 19 − 9 = 10."},
+ {q:"Ứng dụng nào liên quan đến fluoride với lượng phù hợp?",a:["Tạo khí fluor tại nhà","Hỗ trợ ngăn ngừa sâu răng","Dùng khí F₂ để khử trùng miệng","Uống hóa chất công nghiệp"],correct:1,why:"Fluoride trong sản phẩm chăm sóc răng miệng được dùng đúng hướng dẫn có thể hỗ trợ phòng ngừa sâu răng. Không được tiếp xúc với khí F₂."},
+ {q:"Vì sao không được tự làm thí nghiệm tạo khí fluor?",a:["Vì fluor không phản ứng","Vì khí fluor cực độc và ăn mòn mạnh","Vì fluor là kim loại mềm","Vì fluor không tồn tại"],correct:1,why:"F₂ phản ứng rất mạnh, độc và ăn mòn; việc xử lý chỉ thuộc về cơ sở chuyên môn có hệ thống kiểm soát an toàn."}
+];
+let chosen={};
+function renderQuiz(){const root=$("questions");root.innerHTML="";quiz.forEach((q,i)=>{const box=document.createElement("div");box.className="question";const title=document.createElement("h3");title.textContent=`Câu ${i+1}. ${q.q}`;box.appendChild(title);const answers=document.createElement("div");answers.className="answers";q.a.forEach((a,j)=>{const b=document.createElement("button");b.className="answer";b.textContent=String.fromCharCode(65+j)+". "+a;b.onclick=()=>{if(chosen[i]!==undefined)return;chosen[i]=j;const all=answers.querySelectorAll("button");all.forEach((el,k)=>{el.disabled=true;if(k===q.correct)el.classList.add("correct");if(k===j&&j!==q.correct)el.classList.add("wrong");});const fb=box.querySelector(".feedback");fb.textContent=(j===q.correct?"Chính xác! ":"Chưa đúng. ")+q.why;updateScore();};answers.appendChild(b);});box.appendChild(answers);const fb=document.createElement("div");fb.className="feedback";fb.setAttribute("aria-live","polite");box.appendChild(fb);root.appendChild(box);});updateScore();}
+function updateScore(){const score=quiz.reduce((n,q,i)=>n+(chosen[i]===q.correct?1:0),0);$("score").textContent=score;if(Object.keys(chosen).length===quiz.length){$("scoreMessage").textContent=score===5?"Xuất sắc! Bạn đã nắm vững kiến thức chính.":score>=3?"Khá tốt! Đọc phần giải thích rồi thử lại nhé.":"Hãy xem lại hồ sơ nguyên tố và thử thêm lần nữa.";}else $("scoreMessage").textContent=`Bạn đã trả lời ${Object.keys(chosen).length}/5 câu.`;}
+$("resetQuiz").onclick=()=>{chosen={};renderQuiz();};$("hintBtn").onclick=()=>{$("hint").textContent="Tính chất phụ thuộc vào cấu trúc hóa học và dạng tồn tại. F₂ là chất đơn giản có phản ứng cực mạnh; ion fluoride trong một số hợp chất, ở nồng độ thích hợp, có tính chất và ứng dụng khác.";};
+showScene(0);renderQuiz();
+</script>
+</body>
+</html>
